@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:navigation_demo/screen2.dart';
 
@@ -14,9 +12,17 @@ class Screen1 extends StatelessWidget {
         title: const Text('Screen 1'),
       ),
       body: Center(
-        child: RaisedButton(
-          color: Colors.red,
-          child: const Text('Go Forwards To Screen 2'),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.red,
+            foregroundColor: Colors.white,
+            shadowColor: Colors.greenAccent,
+            elevation: 3,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
+            minimumSize: const Size(100, 40),
+          ),
           onPressed: () {
             Navigator.push(
               context,
@@ -27,6 +33,7 @@ class Screen1 extends StatelessWidget {
               ),
             );
           },
+          child: const Text('Go Forwards To Screen 2'),
         ),
       ),
     );

@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 
 class Screen2 extends StatelessWidget {
@@ -13,12 +11,23 @@ class Screen2 extends StatelessWidget {
         title: const Text('Screen 2'),
       ),
       body: Center(
-        child: RaisedButton(
-          color: Colors.blue,
-          child: const Text('Go Back To Screen 1'),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+            shadowColor: Colors.greenAccent,
+            elevation: 3,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
+            minimumSize: const Size(100, 40),
+          ),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pop(
+              context,
+            );
           },
+          child: const Text('Go Back To Screen 1'),
         ),
       ),
     );
